@@ -1,4 +1,4 @@
-﻿using System;
+﻿using MVCCecil;
 
 namespace Processor
 {
@@ -6,7 +6,7 @@ namespace Processor
     {
         static void Main(string[] args)
         {
-            
+            new AssemblyGenerator().Generate();
         }
     }
 }
