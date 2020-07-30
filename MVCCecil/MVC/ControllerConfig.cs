@@ -1,7 +1,7 @@
 ﻿using MVCCecil.Structure.Contract;
 using System;
 
-namespace MVCCecil.Structure.MVC
+namespace MVCCecil.MVC
 {
     public class ControllerConfig : IAssemblyControllerConfig
     {

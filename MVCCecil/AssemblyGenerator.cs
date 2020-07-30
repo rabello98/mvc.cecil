@@ -1,6 +1,6 @@
 ﻿using Mono.Cecil;
 using MVCCecil.Structure.Contract;
-using MVCCecil.Structure.MVC;
+using MVCCecil.MVC;
 using System;
 
 namespace MVCCecil

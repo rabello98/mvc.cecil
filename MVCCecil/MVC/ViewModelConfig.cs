@@ -1,19 +1,19 @@
 ﻿using MVCCecil.Structure.Contract;
 using System;
 
-namespace MVCCecil.Structure.MVC
+namespace MVCCecil.MVC
 {
-    public class ModelConfig : IAssemblyModelConfig
+    public class ViewModelConfig : IAssemblyViewModelConfig
     {
         public string Configuration { get; set; }
-        public ModelConfig() { }
-        public ModelConfig(String configuration)
+        public ViewModelConfig() { }
+        public ViewModelConfig(String configuration)
         {
             Configuration = configuration;
         }
         public void Run()
         {
-            Run(Configuration);   
+            Run(Configuration);
         }
 
         public void Run(String config)
