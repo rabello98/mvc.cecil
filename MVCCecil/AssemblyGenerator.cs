@@ -7,9 +7,6 @@ namespace MVCCecil
 {
     public class AssemblyGenerator : IAssemblyGenerator
     {
-        public String ModelConfig { get; set; }
-        public String ViewModelConfig { get; set; }
-        public String ControllerConfig { get; set; }
         public IAssemblyModelConfig ModelConfigurator { get; set; }
         public IAssemblyViewModelConfig ViewModelConfigurator { get; set; }
         public IAssemblyControllerConfig ControllerConfigurator { get; set; }
@@ -30,6 +27,11 @@ namespace MVCCecil
             CreateInstance();
         }
 
+        public void SetConfig (string masterConfig)
+        {
+
+        }
+
         public void CreateInstance ()
         {
             ModelConfigurator = new ModelConfig();
@@ -39,9 +41,9 @@ namespace MVCCecil
 
         public void Generate()
         {
-            ModelConfigurator.Run(ModelConfig);
-            ViewModelConfigurator.Run(ViewModelConfig);
-            ControllerConfigurator.Run(ControllerConfig);
+            ModelConfigurator.Run();
+            ViewModelConfigurator.Run();
+            ControllerConfigurator.Run();
         }
 
         public void Example ()
