@@ -2,6 +2,9 @@
 using MVCCecil.Structure.Contract;
 using MVCCecil.MVC;
 using System;
+using Newtonsoft.Json;
+using MVCCecil.Structure.StructureModel;
+using Newtonsoft.Json.Linq;
 
 namespace MVCCecil
 {
@@ -25,11 +28,20 @@ namespace MVCCecil
         public AssemblyGenerator(string masterConfig)
         {
             CreateInstance();
+            DeserializeMasterConfig(masterConfig);
         }
 
         public void SetConfig (string masterConfig)
         {
+            DeserializeMasterConfig(masterConfig);
+        }
+        public void DeserializeMasterConfig(string masterConfig)
+        {
+            var config = JsonConvert.DeserializeObject<BaseStruct>(masterConfig);
 
+            ModelConfigurator.BaseConfig = config;
+            ViewModelConfigurator.BaseConfig = config;
+            ControllerConfigurator.BaseConfig = config;
         }
 
         public void CreateInstance ()

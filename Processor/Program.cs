@@ -6,7 +6,14 @@ namespace Processor
     {
         static void Main(string[] args)
         {
-            new AssemblyGenerator().Generate();
+            var config = @"{
+                ModelConfig: {},
+                ViewModelConfig: {},
+                ControllerConfig: {}
+            }";
+
+            var generator = new AssemblyGenerator(config);
+            generator.Generate();
         }
     }
 }
